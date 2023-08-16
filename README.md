@@ -34,6 +34,10 @@ Run the following command:
 python laas/main.py
 ```
 
+## Use server
+To learn more about endpoints go to http://0.0.0.0:8080/docs
+
+
 # Tests
 
 ## pytest
