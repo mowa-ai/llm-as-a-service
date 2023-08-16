@@ -5,6 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "laas.main:app",
+                "--reload"
+            ],
+            "env": {
+                "RANK": "0",
+                "WORLD_SIZE": "1",
+                "MASTER_ADDR": "0.0.0.0",
+                "MASTER_PORT": "2002",
+                "NCCL_P2P_DISABLE": "1"
+            },
+            "jinja": true,
+            "justMyCode": true
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",

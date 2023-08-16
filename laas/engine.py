@@ -1,3 +1,5 @@
+from typing import Annotated
+from fastapi import Depends
 from llama import Llama
 from laas import config, api_models
 
@@ -19,24 +21,14 @@ def init_model():
 
 
 def preprocess_message(engine_input: api_models.EngineInput) -> list[dict]:
-    dialog = [
-        {
-            "role": msg.type.value,
-            "content": msg.text,
-        }
-        for msg in engine_input.history
-    ]
-
-    return dialog
+    return engine_input.model_dump()["history"]
 
 
-def process_message(prompt: str):
-    dialog = [{"role": "user", "content": prompt}]
-
+def process_message(dialog: Annotated[list[dict], Depends(preprocess_message)]) -> str:
     results = MODEL.chat_completion(
         [dialog],
         max_gen_len=config.MAX_GEN_LEN,
         temperature=config.TEMPERATURE,
         top_p=config.TOP_P,
     )
-    return results[0]
+    return results[0]["generation"]["content"]

@@ -1,7 +1,8 @@
 """Main entrypoint for the app."""
 
 
-from fastapi import FastAPI
+from typing import Annotated
+from fastapi import Depends, FastAPI
 
 from laas import config, engine
 
@@ -15,8 +16,8 @@ async def startup():
 
 
 @app.post("/process_message")
-async def process_message(prompt: str):
-    return engine.process_message(prompt)
+async def process_message(result: Annotated[str, Depends(engine.process_message)]) -> str:
+    return result
 
 
 if __name__ == "__main__":
