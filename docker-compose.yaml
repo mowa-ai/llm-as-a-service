@@ -1,0 +1,15 @@
+services:
+  laas:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    image: laas:latest
+    ports:
+      - 80:8080
+    volumes:
+      - ./llama-2-7b-chat:/app/llama-2-7b-chat
+    restart: always
