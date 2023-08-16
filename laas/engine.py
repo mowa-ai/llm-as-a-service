@@ -18,6 +18,18 @@ def init_model():
         print("model loaded")
 
 
+def preprocess_message(engine_input: api_models.EngineInput) -> list[dict]:
+    dialog = [
+        {
+            "role": msg.type.value,
+            "content": msg.text,
+        }
+        for msg in engine_input.history
+    ]
+
+    return dialog
+
+
 def process_message(prompt: str):
     dialog = [{"role": "user", "content": prompt}]
 
