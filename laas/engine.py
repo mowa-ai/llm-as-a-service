@@ -1,7 +1,9 @@
 from typing import Annotated
+
 from fastapi import Depends
 from llama import Llama
-from laas import config, api_models
+
+from laas import api_models, config
 
 MODEL = None
 
@@ -31,4 +33,4 @@ def process_message(dialog: Annotated[list[dict], Depends(preprocess_message)]) 
         temperature=config.TEMPERATURE,
         top_p=config.TOP_P,
     )
-    return results[0]["generation"]["content"]
+    return results[0]["generation"]["content"].strip()

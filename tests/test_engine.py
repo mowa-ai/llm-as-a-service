@@ -1,4 +1,4 @@
-from laas import engine, api_models
+from laas import api_models, engine
 
 
 def test_preprocess_message():

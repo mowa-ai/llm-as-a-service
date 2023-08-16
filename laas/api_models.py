@@ -4,6 +4,12 @@ from typing import List
 from pydantic import BaseModel
 
 
+class HealthCheck(BaseModel):
+    """Response model to validate and return when performing a health check."""
+
+    status: str = "OK"
+
+
 class MessageType(str, Enum):
     user = "user"
     assistant = "assistant"

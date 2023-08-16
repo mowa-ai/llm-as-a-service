@@ -33,3 +33,22 @@ Run the following command:
 ```shell
 python laas/main.py
 ```
+
+# Tests
+
+## pytest
+
+### Without loading LLM
+To run fast tests (no LLM loaded) run
+```bash
+pytest
+```
+
+### With loading LLM
+For longer tests run
+```bash
+pytest --runslow
+```
+
+
+
