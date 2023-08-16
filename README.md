@@ -37,6 +37,16 @@ python laas/main.py
 ## Use server
 To learn more about endpoints go to http://0.0.0.0:8080/docs
 
+# Docker
+## Building
+```bash
+docker build -t laas .
+```
+
+## Run
+```bash
+docker run --runtime=nvidia -v $(pwd)/llama-2-7b-chat:/app/llama-2-7b-chat  --gpus all -p 8080:8080 laas 
+```
 
 # Tests
 
