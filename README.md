@@ -3,8 +3,16 @@ Simple FastAPI service for LLAMA-2 7B chat model.
 
 Current version supports only `7B-chat` model.
 
+Tested on a single Nvidia L4 GPU (24GB) at GCP (machine type `g2-standard-4`).
+
 
 # How to run
+
+## Install all dependecies
+Run:
+```shell
+poetry install
+```
 
 ## Download llama-2 model
 Download `llama-2-7b-chat` model accordingly to the instruction from [llama repository](https://github.com/facebookresearch/llama/tree/ea9f33d6d3ea8ed7d560d270986407fd6c2e52b7).
