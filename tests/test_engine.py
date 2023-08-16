@@ -4,10 +4,10 @@ from laas import engine, api_models
 def test_preprocess_message():
     engine_input = api_models.EngineInput(
         history=[
-            api_models.HistoryRecord(type=api_models.MessageType.system, text="Dummy system message"),
-            api_models.HistoryRecord(type=api_models.MessageType.assistant, text="Dummy assistant message"),
-            api_models.HistoryRecord(type=api_models.MessageType.user, text="Dummy user message"),
-            api_models.HistoryRecord(type=api_models.MessageType.assistant, text="Second dummy assistant message"),
+            api_models.HistoryRecord(role=api_models.MessageType.system, content="Dummy system message"),
+            api_models.HistoryRecord(role=api_models.MessageType.assistant, content="Dummy assistant message"),
+            api_models.HistoryRecord(role=api_models.MessageType.user, content="Dummy user message"),
+            api_models.HistoryRecord(role=api_models.MessageType.assistant, content="Second dummy assistant message"),
         ]
     )
     expected_output = [
