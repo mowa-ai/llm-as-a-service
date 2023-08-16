@@ -1,6 +1,5 @@
 from llama import Llama
-import config
-import api_models
+from laas import config, api_models
 
 MODEL = None
 

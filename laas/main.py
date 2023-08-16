@@ -3,8 +3,7 @@
 
 from fastapi import FastAPI
 
-import config
-import engine
+from laas import config, engine
 
 
 app = FastAPI()

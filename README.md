@@ -3,7 +3,7 @@ Simple FastAPI service for LLAMA-2 7B chat model.
 
 Current version supports only `7B-chat` model.
 
-Tested on a single Nvidia L4 GPU (24GB) at GCP (machine type `g2-standard-4`).
+Tested on a single Nvidia L4 GPU (24GB) at GCP (machine type `g2-standard-8`).
 
 
 # How to run
@@ -24,6 +24,7 @@ export WORLD_SIZE="1"
 export MASTER_ADDR="0.0.0.0"
 export MASTER_PORT="2137"
 export NCCL_P2P_DISABLE="1"
+export OMP_NUM_THREADS=4  # optional
 ```
 
 

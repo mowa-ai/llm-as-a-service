@@ -4,12 +4,14 @@ version = "0.1.0"
 description = ""
 authors = ["Jacek Plocharczyk <jacek.plocharczyk@mowa.ai>"]
 readme = "README.md"
+packages = [{include = "laas"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 llama = {git = "https://github.com/facebookresearch/llama.git", rev = "ea9f33d"}
 uvicorn = "^0.23.2"
 fastapi = "^0.101.1"
+torch = ">=2.0.0, !=2.0.1"
 
 
 [build-system]
