@@ -21,6 +21,6 @@ def process_message(engine_input: api_models.EngineInput) -> str:
     model = get_model()
     output = model(
         text_inputs=engine_input.message,
-        max_length=config.MAX_GEN_LEN,
+        max_length=config.MAX_LENGTH,
     )
     return output[0]["generated_text"][len(engine_input.message):].strip()
