@@ -10,8 +10,8 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "laas.main:app",
-                "--reload"
+                "laas.main:app"
+                // "--reload"
             ],
             "env": {
                 "RANK": "0",

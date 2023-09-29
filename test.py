@@ -140,6 +140,6 @@ prompt_codellama2 = instance_prompt.format(question=question) + "\nAnswer: "
 
 import time
 b = time.time()
-a = requests.post("http://0.0.0.0:8080/process_message", json={"message": prompt_codellama2})   
-
+a = requests.post("http://127.0.0.1:8000/process_message", json={"message": prompt_codellama2})   
+print(a.json())
 print(f"time: {time.time() -b}s")
