@@ -12,7 +12,7 @@ app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
-    engine.init_model()
+    engine.get_model()
 
 
 @app.get(
