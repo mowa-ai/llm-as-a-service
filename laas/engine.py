@@ -32,7 +32,6 @@ def load_ctransformers_model():
         context_length=config.MAX_LENGTH,
         temperature=0.0,
     )
-    model("Lorem ipsum" * 100, max_new_tokens=129).strip()
     return model
 
 
