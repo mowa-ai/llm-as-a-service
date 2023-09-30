@@ -62,5 +62,5 @@ echo -e "\nBuilding docker image"
 docker build -t laas .
 
 
-echo -e "\nStarting server (it will take a while - up to 10 minutes)"
-docker run --runtime=nvidia -v $(pwd)/models/:/app/models  --gpus all -p 8080:8080 laas
+# echo -e "\nStarting server (it will take a while - up to 10 minutes)"
+# docker run --runtime=nvidia -v $(pwd)/models/:/app/models  --gpus all -p 8080:8080 laas
