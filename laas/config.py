@@ -10,4 +10,4 @@ MODEL_NAME = "codellama/CodeLlama-7b-Instruct-hf"
 # MAX_GEN_LEN = 64
 HOST = "0.0.0.0"
 PORT = 8080
-MAX_LENGTH = 2048
+MAX_LENGTH = 4096
