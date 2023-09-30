@@ -1,5 +1,5 @@
 """Main entrypoint for the app."""
-
+import time
 
 from typing import Annotated
 
@@ -12,7 +12,9 @@ app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
+    start = time.time()
     engine.get_model()
+    print(f"loading time: {time.time() - start}s")
 
 
 @app.get(

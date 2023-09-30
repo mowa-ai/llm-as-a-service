@@ -21,7 +21,7 @@ COPY poetry.lock pyproject.toml /app/
 
 RUN poetry config virtualenvs.create false && \
     poetry install --no-interaction --no-ansi
-
+RUN pip install ctransformers[cuda]
 COPY . /app
 
 
