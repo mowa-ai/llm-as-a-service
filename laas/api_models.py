@@ -12,3 +12,4 @@ class HealthCheck(BaseModel):
 
 class EngineInput(BaseModel):
     message: str
+    stop: list[str]
